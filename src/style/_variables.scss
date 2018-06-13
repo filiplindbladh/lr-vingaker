@@ -1,0 +1,41 @@
+// 1. Import the initial variables
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/functions";
+
+// 2. Set your own initial variables
+// Update blue
+$green:#b6eb88;
+$blue: #005192;
+$red: #E35250;
+$grey: #f1eded;
+// Add pink and its invert
+$black: #222222;
+$black-invert: #fff;
+// Add a serif family
+$family-serif: "Oxygen", "Arial", serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $blue;
+$primary-invert: $black-invert;
+$danger: $red;
+$info: $green;
+// $link: $green;
+// Use the new serif family
+$family-primary: $family-serif;
+
+// 6. Import the rest of Bulma
+@import "../../node_modules/bulma/bulma.sass";
+
+.overlay:before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 81, 146, .75);
+}

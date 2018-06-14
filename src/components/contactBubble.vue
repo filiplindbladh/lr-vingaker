@@ -1,7 +1,7 @@
 <template>
   <div id="contact-bubble">
       <button class="circle" @click='openModal()'>
-        <i class="fa fa-commenting fa-4x" aria-hidden="true"></i>
+        <i class="fa fa-commenting fa-3x" aria-hidden="true"></i>
       </button>
       <contactModal :activate="addActive" @closeRequest='close'></contactModal>
   </div>
@@ -40,8 +40,8 @@ button:focus {
 .circle {
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background-color: $green;
   color:white;
   border: 3px solid white;

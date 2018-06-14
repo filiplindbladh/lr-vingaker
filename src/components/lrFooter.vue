@@ -5,14 +5,14 @@
           <div class="footer-item">
             <h4>ADRESS</h4>
             <hr class="lrHeaderLine">
-            <p>Bettorpsgatan 12 C <br>70369 Örebro</p>
+            <p>Hantverksgatan 11<br>643 30 Vingåker</p>
           </div>
           <div class="footer-item">
             <h4>KONTAKT</h4>
             <hr class="lrHeaderLine">
             <ul>
-              <li><a href="tel:019183850">019 18 38 50</a></li>
-              <li><a href="mailto:hej@lr-orebro.se">hej@lr-orebro.se</a></li>
+              <li><a href="tel:0151-13600">0151-136 00</a></li>
+              <li><a href="mailto:hej@lr-vingaker.se">hej@lr-vingaker.se</a></li>
             </ul>
           </div>
           <div class="footer-item">

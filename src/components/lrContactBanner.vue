@@ -16,13 +16,13 @@
                 <!-- Contact info to LR örebro -->
                 <div class="columns contactInfo">
                     <div class="column">
-                        <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:019183850">019 18 38 50</a>
+                        <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:019183850">0151-136 00</a>
                     </div>
                     <div class="column contactBtn">
                         <a id="lr-button-more" class="button is-info is-outlined" @click='openModal()'>KONTAKT</a>
                     </div>
                     <div class="column">
-                        <i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="mailto:hej@lr-orebro.se">hej@lr-orebro.se</a>
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="mailto:hej@lr-vingaker.se">hej@lr-vingaker.se</a>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@
 
     <!-- map to find the way to lr-orebro -->
     <div id="map-responsive">
-      <iframe id="lrMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2036.877014942859!2d15.230097815428799!3d59.30161118164911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465c156c2f43cb8f%3A0x3e4d739f5e063a9!2sBettorpsgatan+12C%2C+703+69+%C3%96rebro!5e0!3m2!1ssv!2sse!4v1511429759546" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <iframe id="lrMap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16418.067626963733!2d15.8572539!3d59.0443845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465eaf7af058becd%3A0x40db06d94abb7809!2sLR+Revision+%26+Redovisning+%C3%96rebro%2FVing%C3%A5ker+AB!5e0!3m2!1ssv!2sse!4v1528967440941" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 
   <!-- the social media icons for lr-orebro -->
@@ -17,7 +17,7 @@
       </div>
       <div class="lrMediaItem">
         <a class="lrMediaIcon" href="https://www.facebook.com/" target="_blank"> <i class="fa fa-facebook-square" aria-hidden="true"></i> </a>
-        <a class="lrMediaIcon" href="https://www.linkedin.com/" target="_blank"> <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a>
+        <a class="lrMediaIcon" href="https://www.linkedin.com/company/lr-revision-&-redovisning-sverige-ab/" target="_blank"> <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a>
       </div>
     </div>
 </div> <!-- / section container -->

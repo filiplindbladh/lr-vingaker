@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #menu {
   position: fixed;
   z-index: 250;

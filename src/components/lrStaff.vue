@@ -37,60 +37,60 @@ export default {
     return {
       staff: [
         {
-          name: 'Elin Viitanen',
-          role: 'Revisorsassistent',
-          img: require('../img/ElinViitanen.png'),
-          phone: '0197652322',
-          mail: 'elin.viitanen@lr-revision.se'
+          name: 'Birgitta',
+          role: 'Roll',
+          img: require('../img/ving/birgitta-min.jpg'),
+          phone: '0000',
+          mail: 'email'
         },
         {
-          name: 'Elin Viitanen',
-          role: 'Revisorsassistent',
-          img: require('../img/ElinViitanen.png'),
-          phone: '0197652322',
-          mail: 'elin.viitanen@lr-revision.se'
+          name: 'Carolin',
+          role: 'Roll',
+          img: require('../img/ving/carolin-min.jpg'),
+          phone: '0000',
+          mail: 'email'
         },
         {
-          name: 'Elin Viitanen',
-          role: 'Revisorsassistent',
-          img: require('../img/ElinViitanen.png'),
-          phone: '0197652322',
-          mail: 'elin.viitanen@lr-revision.se'
+          name: 'Erika',
+          role: 'Roll',
+          img: require('../img/ving/erika-min.jpg'),
+          phone: '0000',
+          mail: 'email'
         },
         {
-          name: 'Elin Viitanen',
-          role: 'Revisorsassistent',
-          img: require('../img/ElinViitanen.png'),
-          phone: '0197652322',
-          mail: 'elin.viitanen@lr-revision.se'
+          name: 'Greta',
+          role: 'Roll',
+          img: require('../img/ving/greta-min.jpg'),
+          phone: '0000',
+          mail: 'email'
         },
         {
-          name: 'Elin Viitanen',
-          role: 'Revisorsassistent',
-          img: require('../img/ElinViitanen.png'),
-          phone: '0197652322',
-          mail: 'elin.viitanen@lr-revision.se'
+          name: 'Jonas',
+          role: 'Roll',
+          img: require('../img/ving/jonas-min.jpg'),
+          phone: '0000',
+          mail: 'email'
         },
         {
-          name: 'Elin Viitanen',
-          role: 'Revisorsassistent',
-          img: require('../img/ElinViitanen.png'),
-          phone: '0197652322',
-          mail: 'elin.viitanen@lr-revision.se'
+          name: 'Linda',
+          role: 'Roll',
+          img: require('../img/ving/linda-min.jpg'),
+          phone: '0000',
+          mail: 'email'
         },
         {
-          name: 'Elin Viitanen',
-          role: 'Revisorsassistent',
-          img: require('../img/ElinViitanen.png'),
-          phone: '0197652322',
-          mail: 'elin.viitanen@lr-revision.se'
+          name: 'Tomas',
+          role: 'Roll',
+          img: require('../img/ving/tomas-min.jpg'),
+          phone: '0000',
+          mail: 'email'
         },
         {
-          name: 'Elin Viitanen',
-          role: 'Revisorsassistent',
-          img: require('../img/ElinViitanen.png'),
-          phone: '0197652322',
-          mail: 'elin.viitanen@lr-revision.se'
+          name: 'Åsa',
+          role: 'Roll',
+          img: require('../img/ving/åsa-min.jpg'),
+          phone: '0000',
+          mail: 'email'
         }
       ]
     }

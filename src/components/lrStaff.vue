@@ -7,19 +7,19 @@
     </p>
     <!-- pictures of the staff on LR örebro -->
     <div class="columns is-multiline lrPictures">
-      <div class="column is-half-tablet is-one-quarter-desktop" v-for="(item, index) in staff" :key="index">
+      <div class="column is-half-tablet is-one-quarter-desktop" v-for="(member, index) in staff" :key="index">
         <div class="staffContainer">
-            <img class="lrStaffMember" :src="item.img" alt="Staff member Lr Örebro">
+            <img class="lrStaffMember" :src="member.img" alt="Staff member Lr Örebro">
             <div class="staffInfo">
               <div class="transparentBox">
-                <p> {{ item.name }}</p>
+                <p> {{ member.name }}</p>
                 <br>
-                <p>{{ item.role }}</p>
+                <p>{{ member.role }}</p>
                 <br>
-                <a :href="'tel:' + item.phone">
+                <a :href="'tel:' + member.phone">
                   <i class="fa fa-phone icon-1x" aria-hidden="true"></i>
                 </a>
-                <a :href="'mailto:' + item.name">
+                <a :href="'mailto:' + member.name">
                   <i class="fa fa-paper-plane icon-1x" aria-hidden="true"></i>
                 </a>
               </div>
@@ -37,11 +37,11 @@ export default {
     return {
       staff: [
         {
-          name: 'Birgitta',
-          role: 'Roll',
+          name: 'Birgitta Larsson',
+          role: 'Reception',
           img: require('../img/ving/birgitta-min.jpg'),
-          phone: '0000',
-          mail: 'email'
+          phone: '015113631',
+          mail: 'birgitta.larsson@lr-revision.se'
         },
         {
           name: 'Carolin',
@@ -51,46 +51,39 @@ export default {
           mail: 'email'
         },
         {
-          name: 'Erika',
+          name: 'Erika Nikolai',
           role: 'Roll',
           img: require('../img/ving/erika-min.jpg'),
-          phone: '0000',
-          mail: 'email'
+          phone: '015113634',
+          mail: 'erika.nikolai@lr-revision.se'
         },
         {
-          name: 'Greta',
+          name: 'Greta Hedlund',
           role: 'Roll',
           img: require('../img/ving/greta-min.jpg'),
-          phone: '0000',
-          mail: 'email'
+          phone: '015113603',
+          mail: 'greta.hedlund@lr-revision.se'
         },
         {
-          name: 'Jonas',
+          name: 'Jonas Lotterberg',
           role: 'Roll',
           img: require('../img/ving/jonas-min.jpg'),
-          phone: '0000',
-          mail: 'email'
+          phone: '015113609',
+          mail: 'jonas.lotterberg@lr-revision.se'
         },
         {
-          name: 'Linda',
+          name: 'Linda Söderling',
           role: 'Roll',
           img: require('../img/ving/linda-min.jpg'),
-          phone: '0000',
-          mail: 'email'
+          phone: '015113630',
+          mail: 'linda.söderling@lr-revision.se'
         },
         {
-          name: 'Tomas',
+          name: 'Tomas Schörling',
           role: 'Roll',
           img: require('../img/ving/tomas-min.jpg'),
-          phone: '0000',
-          mail: 'email'
-        },
-        {
-          name: 'Åsa',
-          role: 'Roll',
-          img: require('../img/ving/åsa-min.jpg'),
-          phone: '0000',
-          mail: 'email'
+          phone: '015113632',
+          mail: 'tomas.schörling@lr-revision.se'
         }
       ]
     }

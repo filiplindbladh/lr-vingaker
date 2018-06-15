@@ -20,9 +20,9 @@
                     <span class="icon is-left">
                         <i class="fa fa-envelope"></i>
                     </span>
-                    <span class="icon is-right">
+                    <!-- <span class="icon is-right">
                         <i class="fa fa-check"></i>
-                    </span>
+                    </span> -->
                     </div>
                     <div class="values">
                     <div class="field is-grouped is-expanded">
@@ -83,6 +83,7 @@ export default {
     .modal {
         min-height:100%;
         z-index:9999999999;
+        padding-top: 2%;
     }
     .modal-card {
         max-width: 100%;

@@ -97,23 +97,14 @@ export default {
     height:5px;
   }
   .lrStaff {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    align-items: center;
+    flex-direction: column;
   }
   .staffContainer {
     position: relative;
   }
   .staffInfo {
-    -webkit-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     opacity: 0;
     margin: auto;
@@ -121,9 +112,6 @@ export default {
     left: 0;
     right: 0;
     bottom: 6px;
-    /* -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%); */
     .fa {
       margin: 15px 12px 0 12px;
       color: $green;

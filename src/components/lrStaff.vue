@@ -9,7 +9,7 @@
     <div class="columns is-multiline lrPictures">
       <div class="column is-half-tablet is-one-quarter-desktop" v-for="(member, index) in staff" :key="index">
         <div class="staffContainer">
-            <img class="lrStaffMember" :src="member.img" alt="Staff member Lr Örebro">
+            <img class="lrStaffMember" :src="member.img" alt="Staff member">
             <div class="staffInfo">
               <div class="transparentBox">
                 <p> {{ member.name }}</p>

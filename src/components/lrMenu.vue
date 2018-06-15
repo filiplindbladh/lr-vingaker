@@ -38,6 +38,7 @@ export default {
   z-index: 250;
   padding: 20px 5%;
   width: 100vw;
+  box-sizing: border-box;
   background-color: white;
   .lr-logo {
     height: 65px;
@@ -48,6 +49,7 @@ export default {
 }
 nav {
   text-align: right;
+  box-sizing: border-box;
   a {
     margin-left: 20px;
     color: $black;
@@ -59,5 +61,31 @@ nav {
   color: $blue;
   border-bottom: 2px solid $blue;
   font-weight: 700;
+}
+@media screen and (max-width: 767px) {
+  .lr-logo {
+    width: 30px;
+  }
+  nav {
+    text-align: center;
+    margin-left: 10%;
+    a {
+      margin-left: 4px;
+      font-size: .75rem;
+    }
+  }
+}
+@media screen and (max-width: 360px) {
+  .lr-logo {
+    display: none;
+  }
+  #menu {
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    padding: 15px 0;
+    margin: 0;
+  }
 }
 </style>

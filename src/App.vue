@@ -14,5 +14,6 @@ export default {
     @import '../node_modules/bulma/css/bulma.css';
     body {
       font-family: Oxygen;
+      overflow-x: hidden;
     }
 </style>

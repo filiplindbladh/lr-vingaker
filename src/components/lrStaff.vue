@@ -38,7 +38,7 @@ export default {
       staff: [
         {
           name: 'Birgitta Larsson',
-          role: 'Reception',
+          role: 'Administratör',
           img: require('../img/ving/birgitta-min.jpg'),
           phone: '015113631',
           mail: 'birgitta.larsson@lr-revision.se'
@@ -52,35 +52,35 @@ export default {
         },
         {
           name: 'Erika Nikolai',
-          role: 'Roll',
+          role: 'Auktoriserad redovisningskonsult',
           img: require('../img/ving/erika-min.jpg'),
           phone: '015113634',
           mail: 'erika.nikolai@lr-revision.se'
         },
         {
           name: 'Greta Hedlund',
-          role: 'Roll',
+          role: 'Redovisningskonsult',
           img: require('../img/ving/greta-min.jpg'),
           phone: '015113603',
           mail: 'greta.hedlund@lr-revision.se'
         },
         {
           name: 'Jonas Lotterberg',
-          role: 'Roll',
+          role: 'Auktoriserad revisor',
           img: require('../img/ving/jonas-min.jpg'),
           phone: '015113609',
           mail: 'jonas.lotterberg@lr-revision.se'
         },
         {
           name: 'Linda Söderling',
-          role: 'Roll',
+          role: 'Kontorschef, redovisningskonsult',
           img: require('../img/ving/linda-min.jpg'),
           phone: '015113630',
           mail: 'linda.söderling@lr-revision.se'
         },
         {
           name: 'Tomas Schörling',
-          role: 'Roll',
+          role: 'Redovisningskonsult',
           img: require('../img/ving/tomas-min.jpg'),
           phone: '015113632',
           mail: 'tomas.schörling@lr-revision.se'

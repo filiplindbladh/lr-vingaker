@@ -16,7 +16,7 @@
                 <!-- Contact info to LR örebro -->
                 <div class="columns contactInfo">
                     <div class="column">
-                        <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:019183850">0151-136 00</a>
+                        <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:0151-13600">0151-136 00</a>
                     </div>
                     <div class="column contactBtn">
                         <a id="lr-button-more" class="button is-info is-outlined" @click='openModal()'>KONTAKT</a>

@@ -13,9 +13,7 @@
             <div class="staffInfo">
               <div class="transparentBox">
                 <p> {{ member.name }}</p>
-                <br>
                 <p>{{ member.role }}</p>
-                <br>
                 <a :href="'tel:' + member.phone">
                   <i class="fa fa-phone icon-1x" aria-hidden="true"></i>
                 </a>
@@ -124,7 +122,11 @@ export default {
       margin-bottom: 5px;
       font-size: 29px;
     }
-    p, a {
+    p {
+      color: white;
+      font-weight: bold;
+    }
+    a {
       color: white;
       font-weight: bold;
       display: inline;

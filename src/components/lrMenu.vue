@@ -75,7 +75,7 @@ nav {
     }
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 414px) {
   .lr-logo {
     display: none;
   }

@@ -39,3 +39,12 @@ $family-primary: $family-serif;
   width: 100%;
   background-color: rgba(0, 81, 146, .75);
 }
+
+//  devices
+//  e g: @media #{$ipads} { ... }
+$small-phones: "only screen and (max-width: 320px)";
+$phones: "only screen and (max-width: 440px)";
+$small-pads: "only screen and (max-width: 780px)";
+$ipads: "only screen and (max-width: 1024px)";
+$long-phones: "only screen and (max-width: 375px) and (min-height: 680px)";
+$ipads-only: "only screen and (max-width: 1024px) and (min-height: 780px)";

@@ -1,13 +1,13 @@
 <template>
-  <div id="maps" class="section container lrMaps">
+  <div class="section container lrMaps">
     <div class="heading-container">
-      <h2>Här finns vi</h2>
+      <h2> {{ this.mapsTexts.mapsHeading }} </h2>
       <hr class="lrHeaderLine">
     </div>
 
     <!-- map to find the way to lr-orebro -->
     <div id="map-responsive">
-      <iframe id="lrMap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16418.067626963733!2d15.8572539!3d59.0443845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465eaf7af058becd%3A0x40db06d94abb7809!2sLR+Revision+%26+Redovisning+%C3%96rebro%2FVing%C3%A5ker+AB!5e0!3m2!1ssv!2sse!4v1528967440941" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <iframe id="lrMap" :src="this.mapsTexts.map" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 
   <!-- the social media icons for lr-orebro -->
@@ -17,7 +17,7 @@
       </div>
       <div class="lrMediaItem">
         <a class="lrMediaIcon" href="https://www.facebook.com/" target="_blank"> <i class="fa fa-facebook-square" aria-hidden="true"></i> </a>
-        <a class="lrMediaIcon" href="https://www.linkedin.com/company/lr-revision-&-redovisning-sverige-ab/" target="_blank"> <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a>
+        <a class="lrMediaIcon" href="https://www.linkedin.com/" target="_blank"> <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a>
       </div>
     </div>
 </div> <!-- / section container -->
@@ -25,43 +25,46 @@
 
 <script>
 export default {
-  name: 'lrMaps'
+  name: 'lrMaps',
+  computed: {
+    pages () {
+      return this.$store.state.pages
+    },
+    mapsTexts () {
+      if (this.pages.length > 0) {
+        return {
+          mapsHeading: this.pages[6].acf.maps_heading,
+          map: this.pages[6].acf.map
+        }
+      } else {
+        return {
+          mapsHeading: '...',
+          map: '...'
+        }
+      }
+    }
+  }
 }
 </script>
 
 <style lang="scss">
   .heading-container {
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-box-pack:center;
-        -ms-flex-pack:center;
-            justify-content:center;
-    -webkit-box-orient:vertical;
-    -webkit-box-direction:normal;
-        -ms-flex-direction:column;
-            flex-direction:column;
-    -webkit-box-align:center;
-        -ms-flex-align:center;
-            align-items:center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   .lrHeaderLine {
     background-color: $red;
-    height:5px;
+    height: 5px;
   }
   .lrSocialMedia {
     width: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-between;
+    align-items: center;
   }
   .lrMediaItem {
     padding: 0 25px;
@@ -80,49 +83,36 @@ export default {
       height: auto;
     }
     .lrMediaIcon {
-      -webkit-transition: all 0.3s ease-in-out;
-      -webkit-transition: all .3s ease-in-out;
-      -o-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out;
-      -webkit-transform: scale(0);
-            -ms-transform: scale(0);
-                transform: scale(0);
+      transform: scale(0);
       :hover {
-        -webkit-transition: all 0.3s ease-in-out;
-        -webkit-transition: all .3s ease-in-out;
-        -o-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out;
-        -webkit-transform: scale(1.1);
-            -ms-transform: scale(1.1);
-                transform: scale(1.1);
+        transform: scale(1.1);
       }
     }
   }
   /* styles for the map */
   #map-responsive{
-    overflow:hidden;
+    overflow: hidden;
     padding-bottom: 350px;
-    position:relative;
-    height:0;
+    position: relative;
+    height: 0;
     width: 100%;
   }
   #map-responsive #lrMap {
     width: 100%;
     height: 350px;
-    left:0;
-    top:0;
-    position:absolute;
+    left: 0;
+    top: 0;
+    position: absolute;
   }
   /* ****************** MEDIAQUERIES ****************** */
   @media screen and (max-width: 550px) {
     .lrSocialMedia {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
+      flex-direction: column;
     }
     .heading-container .lrHeaderLine {
-      width:50%;
+      width: 50%;
     }
   }
 </style>

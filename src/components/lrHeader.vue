@@ -1,26 +1,26 @@
 <template>
-<div id="header">
   <!-- swiper -->
   <swiper :options="swiperOption">
     <swiper-slide>
-      <div class="section header headerOne new-overlay">
+      <div class="section headerOne header overlay" v-bind:style="{ 'background-image': 'url(' + this.headerContent.imageOne.sizes.large + ')' }">
         <div class="lrHeader container">
-          <h1> VÄLKOMMEN TILL <br /> LR-REVISION VINGÅKER </h1>
+          <h1> {{ this.headerContent.headingOne }} </h1>
           <hr class="lrHeaderLineHeader">
+          <!-- <a href="/tjanster" id="lr-button-more" class="button is-info is-outlined">LÄS MER</a> -->
         </div>
       </div>
     </swiper-slide>
     <swiper-slide>
-      <div class="section header headerThree overlay">
+      <div class="section headerThree header overlay" v-bind:style="{ 'background-image': 'url(' + this.headerContent.imageTwo.sizes.large + ')' }">
         <div class="lrHeader container">
-          <h2>HÅLL KOLL PÅ DIN<br> EKONOMI MED LR-ONLINE</h2>
+          <h2> {{ this.headerContent.headingTwo }} </h2>
           <hr class="lrHeaderLineHeader">
+          <!-- <a href="/online" id="lr-button-more" class="button is-info is-outlined">LÄS MER</a> -->
         </div>
       </div>
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
-</div>
 </template>
 
 <script>
@@ -41,22 +41,48 @@ export default {
         }
       }
     }
+  },
+  computed: {
+    pages () {
+      return this.$store.state.pages
+    },
+    headerContent () {
+      if (this.pages.length > 0) {
+        return {
+          headingOne: this.pages[5].acf.heading_one,
+          headingTwo: this.pages[5].acf.heading_two,
+          imageOne: this.pages[5].acf.image_one,
+          imageTwo: this.pages[5].acf.image_two
+        }
+      } else {
+        return {
+          headingOne: '...',
+          headingTwo: '...',
+          imageOne: {
+            sizes: {
+              large: '...'
+            }
+          },
+          imageTwo: {
+            sizes: {
+              large: '...'
+            }
+          }
+        }
+      }
+    }
+  },
+  mounted () {
   }
 }
 </script>
-<style lang="scss">
-.new-overlay:before {
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  background-color: rgba(0, 81, 146, 0.5);
+<style lang="scss" scoped>
+h1, h2 {
+  text-transform: uppercase;
+  width: 75%;
 }
+</style>
+<style lang="scss">
 .swiper-slide {
   max-height: 100vh;
 }
@@ -71,17 +97,8 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  //margin-top: 30px;
+  margin-top: 30px;
   flex-direction: column;
-}
-.headerOne {
-  background-image: url("../img/ving/header.jpeg");
-}
-.headerTwo {
-  background-image: url("../img/headerTwo.jpg");
-}
-.headerThree {
-  background-image: url("../img/headerThree.jpg");
 }
 .lrHeader {
   align-items: center;
@@ -107,5 +124,10 @@ export default {
   transition: all 0.3s ease-in-out;
   border: 5px solid $green;
   font-size: 23px;
+}
+@media #{$ipads} {
+  .lrHeader h1, .lrHeader h2 {
+    width: 80%;
+  }
 }
 </style>

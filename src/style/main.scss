@@ -1,6 +1,6 @@
-@import "variables";
+@import "_variables.scss";
 @import "~bulma/bulma";
-@import "typography";
+@import "_typography.scss";
 
 #loading, #loadingImg {
     display: none;

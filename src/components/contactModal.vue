@@ -11,8 +11,8 @@
                 <h1>Hej</h1>
                 <img src="../img/waving-hand.png">
                 <p>Vad kan vi hjälpa dig med? Skriv ett meddelande så kontaktar vi dig. Önskas en offert vänligen bifoga antal anställda samt fakturor per månad.</p>
-                <form id="gform" form="form" method="POST" action="http://formspree.io/hej@lr-vingaker.se">
-                    <div class="control has-icons-left has-icons-right">
+                <form id="gform" form="form" method="POST" action="https://formspree.io/hej@lr-orebro.se">
+                    <div class="control has-icons-left">
                         <p :class="{ 'control': true }">
                             <input v-validate="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" name="email" type="text" placeholder="Email">
                             <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
@@ -20,9 +20,6 @@
                     <span class="icon is-left">
                         <i class="fa fa-envelope"></i>
                     </span>
-                    <!-- <span class="icon is-right">
-                        <i class="fa fa-check"></i>
-                    </span> -->
                     </div>
                     <div class="values">
                     <div class="field is-grouped is-expanded">
@@ -67,51 +64,48 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    h1 {
-        display:inline;
-    }
-    img {
-        max-width:10%;
-        margin-left:20px;
-    }
-    header.modal-card-head {
-        background-color:$green;
-    }
-    form {
-        margin-top:20px;
-    }
-    .modal {
-        min-height:100%;
-        z-index:9999999999;
-        padding-top: 2%;
-    }
-    .modal-card {
-        max-width: 100%;
-        max-height: 100%;
-    }
-    .values {
-        .control {
-            margin-top:20px;
-        }
-        .valueOne, .valueTwo, {
-            width:100%;
-        }
-    }
-    .textarea {
-        margin-top:20px;
-    }
-    input:valid > div.control.has-icons-left.has-icons-right > span.icon.is-right > i {
-        background-color:green;
-    }
-    .is-grouped {
-        -ms-flex-wrap:wrap;
-            flex-wrap:wrap;
-    }
-    @media screen and (min-width: 779px) {
-        .modal.is-active {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: inline-block;
-        }
-    }
+h1 {
+  display: inline;
+}
+img {
+  max-width: 10%;
+  margin-left: 20px;
+}
+header.modal-card-head {
+  background-color: $green;
+}
+form {
+  margin-top: 20px;
+}
+.modal {
+  min-height: 100%;
+  z-index: 9999999999;
+  padding-top: 30px;
+}
+.modal-card {
+  max-width: 100%;
+  max-height: 100%;
+}
+.values {
+  .control {
+    margin-top: 20px;
+  }
+  .valueOne, .valueTwo, {
+    width: 100%;
+  }
+}
+.textarea {
+  margin-top: 20px;
+}
+input:valid > div.control.has-icons-left.has-icons-right > span.icon.is-right > i {
+  background-color:green;
+}
+.is-grouped {
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 779px) {
+  .modal.is-active {
+    display: inline-block;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="slider-container" id="reviews">
+  <div class="slider-container">
     <div class="slider">
       <slider animation="normal" :speed="200" :auto="false" :indicators="'center'" :control-btn="false" :height="'350px'">
         <slider-item>
@@ -7,7 +7,7 @@
             <i class="fa fa-quote-left" aria-hidden="true"></i>
           </div>
           <div class="slider-text">
-            <p class="mainText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="mainText">Remember, a "good" review is the type of review that's useful to the people who come along behind you. If you need to take some time away from the keyboard to really organize your thoughts and think about your experience from multiple sides of the issue, take it. Don't start writing in a fit of rage.</p>
           </div>
           <div class="slider-company">
             <p>– Namn Namnsson, <span>Företag AB</span></p>
@@ -18,7 +18,7 @@
             <i class="fa fa-quote-left fa-5x" aria-hidden="true"></i>
           </div>
           <div class="slider-text">
-            <p class="mainText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="mainText">Remember, a "good" review is the type of review that's useful to the people who come along behind you. If you need to take some time away from the keyboard to really organize your thoughts and think about your experience from multiple sides of the issue, take it. Don't start writing in a fit of rage.</p>
           </div>
           <div class="slider-company">
             <p>– Namn Namnsson, <span>Företag AB</span></p>
@@ -29,7 +29,7 @@
             <i class="fa fa-quote-left fa-5x" aria-hidden="true"></i>
           </div>
           <div class="slider-text">
-            <p class="mainText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="mainText">Remember, a "good" review is the type of review that's useful to the people who come along behind you. If you need to take some time away from the keyboard to really organize your thoughts and think about your experience from multiple sides of the issue, take it. Don't start writing in a fit of rage.</p>
           </div>
           <div class="slider-company">
             <p>– Namn Namnsson, <span>Företag AB</span></p>
@@ -78,7 +78,7 @@ export default {
     //height:350px;
     width:70%;
     background-color:white;
-    margin-top:80px;
+    margin-top:40px;
     margin-bottom:80px;
   }
   .indicators > .slider-indicator-icon {
@@ -119,10 +119,6 @@ export default {
     -webkit-box-align:center;
         -ms-flex-align:center;
             align-items:center;
-    p {
-      text-align: left;
-      margin-left: 20px;
-    }
   }
   .slider-company {
     display:-webkit-box;
@@ -154,7 +150,6 @@ export default {
       .slider {
         width:100%;
         height:400px;
-        margin: 0;
       }
     }
     @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
@@ -171,9 +166,6 @@ export default {
     @media screen and (max-width: 500px) {
       .fa-quote-left {
         font-size: 3em;
-      }
-      .slider-text {
-        margin-top: 20px;
       }
     }
     @media screen and (max-width: 347px) {

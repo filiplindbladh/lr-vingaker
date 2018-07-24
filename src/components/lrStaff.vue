@@ -1,23 +1,22 @@
 <template>
-  <div id="staff" class="section container lrStaff">
-    <h2>Mer än bara siffror</h2>
+  <div class="section container lrStaff">
+    <h2> {{ this.staffTexts.staffHeading }}</h2>
     <hr class="lrHeaderLine">
-    <p class="mainText">
-      Vår byrå består av kompetent och engagerad personal. Vi gör vårt yttersta för att hjälpa Er företagare med vår kunskap och erfarenhet. På LR tycker vi att det är viktigt att bygga en långsiktig affärsmässig relation med våra kunder, där trygghet och förståelse för kundens verksamhet står i centrum.
+    <p class="mainText" v-html="this.staffTexts.staffParagraph">
     </p>
     <!-- pictures of the staff on LR örebro -->
     <div class="columns is-multiline lrPictures">
-      <div class="column is-half-tablet is-one-quarter-desktop" v-for="(member, index) in staff" :key="index">
+      <div class="column is-half-tablet is-one-quarter-desktop" v-for="(member, index) in staffList" :key="index">
         <div class="staffContainer">
-            <img class="lrStaffMember" :src="member.img" alt="Staff member">
+            <img class="lrStaffMember" :src="member.img.sizes.medium" alt="Staff member">
             <div class="staffInfo">
               <div class="transparentBox">
                 <p> {{ member.name }}</p>
                 <p>{{ member.role }}</p>
-                <a :href="'tel:' + member.phone">
+                <a v-if="member.mobile.length > 0" :href="'tel:' + member.mobile">
                   <i class="fa fa-phone icon-1x" aria-hidden="true"></i>
                 </a>
-                <a :href="'mailto:' + member.name">
+                <a v-if="member.mail.length > 0" :href="'mailto:' + member.mail">
                   <i class="fa fa-paper-plane icon-1x" aria-hidden="true"></i>
                 </a>
               </div>
@@ -33,57 +32,36 @@ export default {
   name: 'lrStaff',
   data () {
     return {
-      staff: [
-        {
-          name: 'Birgitta Larsson',
-          role: 'Administratör',
-          img: require('../img/ving/birgitta-min.jpg'),
-          phone: '015113631',
-          mail: 'birgitta.larsson@lr-revision.se'
-        },
-        {
-          name: 'Carolin',
-          role: 'Roll',
-          img: require('../img/ving/carolin-min.jpg'),
-          phone: '0000',
-          mail: 'email'
-        },
-        {
-          name: 'Erika Nikolai',
-          role: 'Auktoriserad redovisningskonsult',
-          img: require('../img/ving/erika-min.jpg'),
-          phone: '015113634',
-          mail: 'erika.nikolai@lr-revision.se'
-        },
-        {
-          name: 'Greta Hedlund',
-          role: 'Redovisningskonsult',
-          img: require('../img/ving/greta-min.jpg'),
-          phone: '015113603',
-          mail: 'greta.hedlund@lr-revision.se'
-        },
-        {
-          name: 'Jonas Lotterberg',
-          role: 'Auktoriserad revisor',
-          img: require('../img/ving/jonas-min.jpg'),
-          phone: '015113609',
-          mail: 'jonas.lotterberg@lr-revision.se'
-        },
-        {
-          name: 'Linda Söderling',
-          role: 'Kontorschef, redovisningskonsult',
-          img: require('../img/ving/linda-min.jpg'),
-          phone: '015113630',
-          mail: 'linda.söderling@lr-revision.se'
-        },
-        {
-          name: 'Tomas Schörling',
-          role: 'Redovisningskonsult',
-          img: require('../img/ving/tomas-min.jpg'),
-          phone: '015113632',
-          mail: 'tomas.schörling@lr-revision.se'
+    }
+  },
+  computed: {
+    pages () {
+      return this.$store.state.pages
+    },
+    staffTexts () {
+      if (this.pages.length > 0) {
+        return {
+          staffHeading: this.pages[6].acf.staff_heading,
+          staffParagraph: this.pages[6].acf.staff_paragraph
         }
-      ]
+      } else {
+        return {
+          staffHeading: '...',
+          staffParagraph: '...'
+        }
+      }
+    },
+    posts () {
+      return this.$store.state.posts
+    },
+    staffList () {
+      let staff = this.posts.map(posts => posts.acf)
+      return staff.reverse()
+    }
+  },
+  watch: {
+    staffList () {
+      console.log('staff:', this.staffList)
     }
   }
 }

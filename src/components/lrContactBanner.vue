@@ -16,13 +16,13 @@
                 <!-- Contact info to LR örebro -->
                 <div class="columns contactInfo">
                     <div class="column">
-                        <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:0151-13600">0151-136 00</a>
+                        <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:019183850">019 18 38 50</a>
                     </div>
                     <div class="column contactBtn">
                         <a id="lr-button-more" class="button is-info is-outlined" @click='openModal()'>KONTAKT</a>
                     </div>
                     <div class="column">
-                        <i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="mailto:hej@lr-vingaker.se">hej@lr-vingaker.se</a>
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="mailto:hej@lr-orebro.se">hej@lr-orebro.se</a>
                     </div>
                 </div>
             </div>
@@ -71,11 +71,11 @@ export default {
                 justify-content: center;
         h3 {
             color: $white;
-            z-index: 200;
+            z-index: 300;
         }
         a {
             color: $green;
-            z-index: 200;
+            z-index: 300;
             &:hover {
                 color: $white;
             }
@@ -105,7 +105,7 @@ export default {
             -ms-flex-align: center;
                 align-items: center;
         text-align: center;
-        z-index: 200;
+        z-index: 300;
         -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
             -ms-flex-direction: column;

@@ -5,14 +5,14 @@
           <div class="footer-item">
             <h4>ADRESS</h4>
             <hr class="lrHeaderLine">
-            <p>Hantverksgatan 11<br>643 30 Vingåker</p>
+            <p>{{ this.footerTexts.adress }}</p>
           </div>
           <div class="footer-item">
             <h4>KONTAKT</h4>
             <hr class="lrHeaderLine">
             <ul>
-              <li><a href="tel:0151-13600">0151-136 00</a></li>
-              <li><a href="mailto:hej@lr-vingaker.se">hej@lr-vingaker.se</a></li>
+              <li><a :href="'tel:' + this.footerTexts.vaxel">{{ this.footerTexts.vaxel }}</a></li>
+              <li><a :href="'mailto:' + this.footerTexts.epost"> {{ this.footerTexts.epost }}</a></li>
             </ul>
           </div>
           <div class="footer-item">
@@ -34,70 +34,77 @@
 
 <script>
 export default {
-  name: 'lrFooter'
+  name: 'lrFooter',
+  computed: {
+    pages () {
+      return this.$store.state.pages
+    },
+    footerTexts () {
+      if (this.pages.length > 0) {
+        return {
+          adress: this.pages[0].acf.adress,
+          epost: this.pages[0].acf.epost,
+          vaxel: this.pages[0].acf.vaxel
+        }
+      } else {
+        return {
+          adress: '...',
+          vaxel: '...',
+          epost: '...'
+        }
+      }
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
   .footer {
-    background-color:$blue !important;
+    background-color: $blue !important;
   }
   .lrFooter {
-    background-color:$blue !important;
-    height:100%;
-    position:relative;
+    background-color: $blue !important;
+    height: 100%;
+    position: relative;
     a, p, h4 {
-      color:white;
+      color: white;
     }
     a:hover {
-      text-decoration:underline;
+      text-decoration: underline;
     }
   }
   .lrHeaderLine {
-    background-color:$red;
+    background-color: $red;
   }
   .footer-container {
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-box-orient:horizontal;
-    -webkit-box-direction:normal;
-        -ms-flex-direction:row;
-            flex-direction:row;
-    -webkit-box-pack:justify;
-        -ms-flex-pack:justify;
-            justify-content:space-between;
-    -ms-flex-wrap:wrap;
-        flex-wrap:wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 200px;
   }
   .footer-item {
-    margin:20px;
-    z-index:300;
+    margin: 20px;
+    z-index: 300;
+  }
+  .footer-item:first-of-type p {
+    width: 50%;
   }
   .footer-icon-container {
-    position:absolute;
-    bottom:0;
-    width:100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
+    flex-flow: column wrap;
   }
   /* ****************** MEDIAQUERIES ****************** */
   @media screen and (max-width: $tablet - 1px) {
     .footer-container {
-      margin-bottom:0;
-      -webkit-box-orient:vertical;
-      -webkit-box-direction:normal;
-          -ms-flex-direction:column;
-              flex-direction:column;
+      margin-bottom: 0;
+      flex-direction: column;
     }
     .lrHeaderLine {
-      width:70%;
+      width: 70%;
     }
   }
   @media screen and (min-width: $tablet) {

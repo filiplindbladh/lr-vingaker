@@ -1,38 +1,44 @@
 <template>
   <div id="start">
-  <!-- contactBubble -->
-  <contactBubble/>
-  <lrMenu />
-  <!-- header -->
-  <lrHeader/>
+    <!-- menu -->
+    <lrMenu/>
 
-  <!-- services -->
-  <lrServices></lrServices>
+    <!-- header -->
+    <lrHeader/>
 
-  <!-- first contact banner -->
-  <lrContactBanner bannerText="Långsiktiga lösningar för traditionella eller digitala företag" :backgroundImage="true"></lrContactBanner>
+    <!-- contactBubble -->
+    <contactBubble/>
 
-  <!-- the staff on LR-orebro -->
-  <lrStaff></lrStaff>
+    <!-- services -->
+    <lrServices/>
 
-  <!-- review carousell -->
-  <lrReviews></lrReviews>
+    <!--Facebook post-->
+    <!-- lrFacebookPost/> -->
 
- <!-- second contact banner -->
- <lrContactBanner bannerText="Behöver ni hjälp att utveckla ert företag?" :backgroundImage ="false"></lrContactBanner>
+    <!-- first contact banner -->
+    <lrContactBanner v-bind:bannerText="this.bannerTexts.bannerOne" :backgroundImage="true"/>
 
-  <!-- How to get there -->
-  <lrMaps></lrMaps>
+    <!-- staff -->
+    <lrStaff/>
 
-  <!-- footer of the page -->
-  <lrFooter></lrFooter>
+    <!-- review carousell -->
+    <!--lrReviews/>-->
 
+    <!-- second contact banner -->
+    <lrContactBanner v-bind:bannerText="this.bannerTexts.bannerTwo" :backgroundImage ="false"/>
+
+    <!-- maps -->
+    <lrMaps/>
+
+    <!-- footer -->
+    <lrFooter/>
   </div>
 </template>
 
 <script>
 import 'font-awesome/css/font-awesome.css'
 import contactBubble from '@/components/contactBubble.vue'
+import lrMenu from '@/components/lrMenu.vue'
 import lrHeader from '@/components/lrHeader.vue'
 import lrContactBanner from '@/components/lrContactBanner.vue'
 import lrServices from '@/components/lrServices.vue'
@@ -41,47 +47,71 @@ import lrReviews from '@/components/lrReviews.vue'
 import lrMaps from '@/components/lrMaps.vue'
 import lrFooter from '@/components/lrFooter.vue'
 import VueImgLoader from 'vue-img-loader'
-import lrMenu from '@/components/lrMenu.vue'
+import lrFacebookPost from '@/components/lrFacebookPost.vue'
 
 export default {
   name: 'Start',
+  data () {
+    return {
+    }
+  },
+  computed: {
+    pages () {
+      return this.$store.state.pages
+    },
+    bannerTexts () {
+      if (this.pages.length > 0) {
+        return {
+          bannerOne: this.pages[6].acf.contactbanner_heading_one,
+          bannerTwo: this.pages[6].acf.contactbanner_heading_two
+        }
+      } else {
+        return {
+          bannerOne: '...',
+          bannerTwo: '...'
+        }
+      }
+    }
+  },
+  methods: {
+  },
   components: {
     contactBubble,
-    lrHeader,
     lrMenu,
+    lrHeader,
     lrServices,
     lrContactBanner,
     lrStaff,
     lrReviews,
     lrMaps,
     lrFooter,
+    lrFacebookPost,
     'vue-img-loader': VueImgLoader
   }
 }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-    html {
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-    }
-    *, *:before, *:after {
-            -webkit-box-sizing: inherit;
-                    box-sizing: inherit;
-    }
-    body {
-      position: relative;
-    }
-    #contact-bubble {
-      z-index: 900;
-      right: 20px;
-      position: fixed;
-      bottom: 50px;
-    }
-    /* ****************** MEDIAQUERIES ****************** */
-  @media screen and (max-width: $tablet - 1px) {
-    .lrHeaderLine {
-      width: 50%;
-    }
+  html {
+    box-sizing: border-box;
   }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    position: relative;
+  }
+  #contact-bubble {
+    z-index: 900;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+  }
+  /* ****************** MEDIAQUERIES ****************** */
+@media screen and (max-width: $tablet - 1px) {
+  .lrHeaderLine {
+    width: 50%;
+  }
+}
 </style>

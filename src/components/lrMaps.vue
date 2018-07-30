@@ -5,12 +5,12 @@
       <hr class="lrHeaderLine">
     </div>
 
-    <!-- map to find the way to lr-orebro -->
+    <!-- maps -->
     <div id="map-responsive">
       <iframe id="lrMap" :src="this.mapsTexts.map" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 
-  <!-- the social media icons for lr-orebro -->
+  <!-- the social media icons -->
     <div class="lrSocialMedia">
       <div class="lrMediaItem">
         <a class="lrMediaIcon" href="http://lr-revision.se/" target="_blank"> <img src="../img/LR-sverige.png" alt="Logo LR Sverige"></a>

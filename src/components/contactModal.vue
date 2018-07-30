@@ -11,7 +11,7 @@
                 <h1>Hej</h1>
                 <img src="../img/waving-hand.png">
                 <p>Vad kan vi hjälpa dig med? Skriv ett meddelande så kontaktar vi dig. Önskas en offert vänligen bifoga antal anställda samt fakturor per månad.</p>
-                <form id="gform" form="form" method="POST" action="https://formspree.io/hej@lr-orebro.se">
+                <form id="gform" form="form" method="POST" action="https://formspree.io/vingaker@lr-revision.se">
                     <div class="control has-icons-left">
                         <p :class="{ 'control': true }">
                             <input v-validate="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" name="email" type="text" placeholder="Email">

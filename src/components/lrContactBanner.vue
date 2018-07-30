@@ -16,13 +16,13 @@
                 <!-- Contact info -->
                 <div class="columns contactInfo">
                     <div class="column">
-                        <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:0151-136 00">0151-136 00</a>
+                        <i class="fa fa-phone" aria-hidden="true"></i> <a :href="'tel:' + this.contactTexts.vaxel"> {{ this.contactTexts.vaxel }} </a>
                     </div>
                     <div class="column contactBtn">
                         <a id="lr-button-more" class="button is-info is-outlined" @click='openModal()'>KONTAKT</a>
                     </div>
                     <div class="column">
-                        <i class="fa fa-paper-plane" aria-hidden="true"></i> <a href="mailto:vingaker@lr-revision.se">vingaker@lr-revision.se</a>
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i> <a :href="'mailto:' + this.contactTexts.epost ">{{ this.contactTexts.epost }}</a>
                     </div>
                 </div>
             </div>
@@ -56,6 +56,22 @@ export default {
     }
   },
   computed: {
+    pages () {
+      return this.$store.state.pages
+    },
+    contactTexts () {
+      if (this.pages.length > 0) {
+        return {
+          epost: this.pages[0].acf.epost,
+          vaxel: this.pages[0].acf.vaxel
+        }
+      } else {
+        return {
+          vaxel: '...',
+          epost: '...'
+        }
+      }
+    }
   }
 }
 </script>

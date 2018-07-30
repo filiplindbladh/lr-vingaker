@@ -1,3 +1,3 @@
 export default {
-  apiurl: 'https://lr-orebro.se/wp/wp-json/wp/v2/'
+  apiurl: 'https://lr-vingaker.se/wp/wp-json/wp/v2/'
 }

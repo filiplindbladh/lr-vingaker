@@ -4,7 +4,7 @@
     <hr class="lrHeaderLine">
     <p class="mainText" v-html="this.staffTexts.staffParagraph">
     </p>
-    <!-- pictures of the staff on LR örebro -->
+    <!-- staff -->
     <div class="columns is-multiline lrPictures">
       <div class="column is-half-tablet is-one-quarter-desktop" v-for="(member, index) in staffList" :key="index">
         <div class="staffContainer">

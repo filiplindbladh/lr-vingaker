@@ -11,7 +11,7 @@
         </p>
       </div>
       <div>
-        <img :src="this.workTexts.textImg.sizes.large" alt="Lr-Orebro staff">
+        <img :src="this.workTexts.textImg.sizes.large" alt="Lr-vingaker staff">
       </div>
     </div>
     <div class="work-banner" v-if="this.workTexts.showBanner">
@@ -19,7 +19,7 @@
       <h3>{{ this.workTexts.bannerHeading }}</h3>
       <p class="leadText" v-html="this.workTexts.bannerText">
       </p>
-      <a href="mailto:hej@lr-orebro.se" class="button is-primary is-outlined">
+      <a href="mailto:vingaker@lr-revision.se" class="button is-primary is-outlined">
       SKICKA IN ANSÖKAN
       <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
       </a>

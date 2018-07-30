@@ -17,7 +17,7 @@
           <strong>Växel:</strong> <a :href="'tel:' + this.contactTexts.vaxel"> {{ this.contactTexts.vaxel }} </a>
         </p>
       </div>
-      <!-- Pictures and info about the staff on LR Örebro -->
+      <!-- Pictures and info about the staff on -->
       <div class="columns is-mobile is-multiline lrContactPictures">
         <div class="column is-mobile is-half-tablet is-one-third-desktop" v-for="(member, index) in staffList" :key="index">
           <div class="staffContactContainer">

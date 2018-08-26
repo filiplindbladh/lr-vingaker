@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0-rc.3",
     "@deveodk/vue-animate": "^1.0.1",
     "axios": "^0.18.0",
     "bulma": "^0.7.1",

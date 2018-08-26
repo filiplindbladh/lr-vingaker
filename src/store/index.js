@@ -22,7 +22,6 @@ export default new Vuex.Store({
     getPages (context, payLoad) {
       axios.get(apiurl.default.apiurl + 'pages?per_page=100')
         .then(function (response) {
-          console.log('responsestore:', response.data)
           context.commit('setPages', response.data)
         })
         .catch(function (e) {
@@ -33,7 +32,6 @@ export default new Vuex.Store({
     getPosts (context, payLoad) {
       axios.get(apiurl.default.apiurl + 'posts?per_page=100')
         .then(function (response) {
-          console.log('response posts store:', response.data)
           context.commit('setPosts', response.data)
         })
         .catch(function (e) {

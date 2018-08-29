@@ -16,6 +16,13 @@
           <strong>E-post:</strong> <a :href="'mailto:' + this.contactTexts.epost"> {{ this.contactTexts.epost }} </a> <br/>
           <strong>Växel:</strong> <a :href="'tel:' + this.contactTexts.vaxel"> {{ this.contactTexts.vaxel }} </a>
         </p>
+      <input class="input" type="text" placeholder="Sök..." v-model="search">
+      </div>
+      <!--- search fallback -->
+      <div v-if="this.staffList.length === 0" class="search-fallback">
+        <p>
+          Sökningen gav inget resultat...
+        </p>
       </div>
       <!-- Pictures and info about the staff on -->
       <div class="columns is-mobile is-multiline lrContactPictures">
@@ -52,18 +59,28 @@
 <script>
 export default {
   name: 'lrContactUs',
+  data() {
+    return {
+      search: ''
+    }
+  },
   computed: {
-    posts () {
+    posts() {
       return this.$store.state.posts
     },
-    staffList () {
+    staffList() {
       let staff = this.posts.map(posts => posts.acf)
-      return staff.reverse()
+      return staff.reverse().filter(member => {
+        return (
+          member.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 ||
+          member.role.toLowerCase().indexOf(this.search.toLowerCase()) !== -1
+        )
+      })
     },
-    pages () {
+    pages() {
       return this.$store.state.pages
     },
-    contactTexts () {
+    contactTexts() {
       if (this.pages.length > 0) {
         return {
           heading: this.pages[0].acf.contact_heading,
@@ -91,6 +108,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.input {
+  width: 70%;
+  margin-top: 40px;
+  &:focus {
+    border: none;
+  }
+}
+.search-fallback {
+  width: 70%;
+  margin: 0 auto;
+}
 .quote {
   display: flex;
   align-items: center;
@@ -169,11 +197,11 @@ export default {
     display: block;
   }
 }
-  .mainText {
-  text-align:left;
+.mainText {
+  text-align: left;
 }
 .adress {
-  margin-top:10px;
+  margin-top: 10px;
 }
 /* ****************** MEDIAQUERIES ****************** */
 @media screen and (max-width: $tablet - 1px) {
@@ -183,7 +211,7 @@ export default {
     }
   }
   .contactUs .lrHeaderLine {
-    width:50%;
+    width: 50%;
   }
 }
 @media screen and (max-width: 616px) {

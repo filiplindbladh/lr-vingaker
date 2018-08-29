@@ -6,13 +6,13 @@
             </div>
             <!-- Menu on desktop and lager screens -->
             <div class="menuItems">
-                <router-link to="/">START</router-link>
-                <router-link to="/tjanster">TJÄNSTER</router-link>
-                <router-link to="/om-oss">OM OSS</router-link>
-                <router-link to="/kontakta-oss">KONTAKT</router-link>
-                <router-link to="/lediga-jobb">LEDIGA JOBB</router-link>
-                <router-link to="/online">LR-ONLINE</router-link>
-                <router-link to="/fortnox">FORTNOX</router-link>
+                <router-link router-link-active to="/">START</router-link>
+                <router-link router-link-active to="/tjanster">TJÄNSTER</router-link>
+                <router-link router-link-active to="/om-oss">OM OSS</router-link>
+                <router-link router-link-active to="/kontakta-oss">KONTAKT</router-link>
+                <router-link router-link-active to="/lediga-jobb">LEDIGA JOBB</router-link>
+                <router-link router-link-active to="/online">LR-ONLINE</router-link>
+                <router-link router-link-active to="/fortnox">FORTNOX</router-link>
             </div>
             <div class="smallScreenMenuContainer">
                 <!-- Menu open button -->
@@ -44,16 +44,16 @@
 <script>
 export default {
   name: 'lrMenu',
-  data: function () {
+  data: function() {
     return {
       isActive: false
     }
   },
   methods: {
-    open: function () {
+    open: function() {
       this.isActive = true
     },
-    close: function () {
+    close: function() {
       this.isActive = false
     }
   }
@@ -83,7 +83,7 @@ export default {
   align-items: center;
 }
 .lrMenuContainer {
-    display: flex;
+  display: flex;
 }
 .menuItems {
   display: flex;
@@ -92,46 +92,55 @@ export default {
   width: 100%;
   align-items: center;
   a {
-    transition: all .3s ease-in-out;
-    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+    font-weight: bold;
     font-size: 0.85rem;
     color: $black;
-    font-weight: 700;
     &:hover {
       color: $blue;
     }
+    &.router-link-exact-active {
+      border-bottom: 2px solid $blue;
+      transition: all 0.3s ease-in-out;
+      color: $blue;
+    }
   }
-    .hoverFortnox {
-        display: none;
-    }
-    .lr-button-fortnox {
-        margin-left:20px;
-        width: 100.43px;
-        height: 30.59px;
-    }
-    a:hover img:last-child {
-        display: block;
-    }
-    a:hover img:first-child {
-        display: none;
-    }
-    .lr-button-online {
-        font-size: 0.85rem;
-        font-weight: bold;
-        margin: 0 20px;
-        width: 100.43px;
-    }
-    img {
-        height: 15px;
-        /* min height to get IE happy */
-        min-width: 100%;
-    }
+  .hoverFortnox {
+    display: none;
+  }
+  .lr-button-fortnox {
+    margin-left: 20px;
+    width: 100.43px;
+    height: 30.59px;
+  }
+  a:hover img:last-child {
+    display: block;
+  }
+  a:hover img:first-child {
+    display: none;
+  }
+  .lr-button-online {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin: 0 20px;
+    width: 100.43px;
+  }
+  img {
+    height: 15px;
+    /* min height to get IE happy */
+    min-width: 100%;
+  }
 }
 /*####################
-Menu on small screens
-####################*/
+    Menu on small screens
+    ####################*/
 .smallScreenMenuContainer {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 #open-menu div {
@@ -142,7 +151,7 @@ Menu on small screens
   cursor: pointer;
 }
 .menuOverlay {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   height: 100%;
   overflow-x: hidden;
   position: fixed;
@@ -161,11 +170,13 @@ Menu on small screens
     text-decoration: none;
     white-space: nowrap;
     border-bottom: 1px solid transparent;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
   }
   a:hover {
-      border-bottom: 2px solid $green;
-      color: $white;
+    border-bottom: 2px solid $green;
+    color: $white;
   }
   .closeBtn {
     color: $white;
@@ -185,16 +196,16 @@ Menu on small screens
 }
 /* the added class to get the menu to fold out over the screen */
 .active {
-    width: 100%;
+  width: 100%;
 }
 .overlay-content {
-    position: relative;
-    text-align: center;
-    top: 15%;
-    width: 100%;
+  position: relative;
+  text-align: center;
+  top: 15%;
+  width: 100%;
 }
 .overlay-content .hoverFortnox {
-    max-width: 170px;
+  max-width: 170px;
 }
 /* ****************** MEDIAQUERIES ****************** */
 @media screen and (max-width: 1024px) {
@@ -209,6 +220,8 @@ Menu on small screens
   }
   .lrMenuContainer {
     min-width: 90%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 }

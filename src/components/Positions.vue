@@ -40,10 +40,10 @@ export default {
     lrFooter
   },
   computed: {
-    pages () {
+    pages() {
       return this.$store.state.pages
     },
-    workTexts () {
+    workTexts() {
       if (this.pages.length > 0) {
         return {
           headerImg: this.pages[2].acf.header_img,
@@ -80,7 +80,7 @@ export default {
 
 <style scoped lang="scss">
 .positionsHeader {
-  margin-top:67px;
+  margin-top: 67px;
   //background-image: url("../img/positionsHeader.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -138,6 +138,9 @@ export default {
   .fa-briefcase {
     font-size: 30px;
   }
+  h3 {
+    text-align: center;
+  }
   .leadText {
     width: 70%;
     text-align: center;
@@ -150,7 +153,7 @@ export default {
     margin-left: 5px;
   }
   a {
-    z-index:999;
+    z-index: 999;
   }
 }
 @media screen and (max-width: $tablet - 1px) {

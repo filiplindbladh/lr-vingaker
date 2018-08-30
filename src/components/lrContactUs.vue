@@ -91,7 +91,7 @@ export default {
         }
       } else {
         return {
-          heading: '...',
+          heading: '...', 
           headerImg: {
             sizes: {
               large: '...'

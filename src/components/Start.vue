@@ -6,9 +6,6 @@
     <!-- header -->
     <lrHeader/>
 
-    <!-- contactBubble -->
-    <contactBubble/>
-
     <!-- services -->
     <lrServices/>
 
@@ -37,7 +34,6 @@
 
 <script>
 import 'font-awesome/css/font-awesome.css'
-import contactBubble from '@/components/contactBubble.vue'
 import lrMenu from '@/components/lrMenu.vue'
 import lrHeader from '@/components/lrHeader.vue'
 import lrContactBanner from '@/components/lrContactBanner.vue'
@@ -76,7 +72,6 @@ export default {
   methods: {
   },
   components: {
-    contactBubble,
     lrMenu,
     lrHeader,
     lrServices,

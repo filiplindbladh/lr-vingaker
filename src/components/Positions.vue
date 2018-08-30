@@ -164,7 +164,7 @@ export default {
       flex-basis: 50%;
     }
   }
-  .work {
+  .work-banner {
     .leadText {
       width: 100%;
     }

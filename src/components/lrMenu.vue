@@ -1,44 +1,60 @@
 <template>
-    <div id="lrMenu">
-        <div class="container lrMenuContainer">
-            <div class="lrLogoContainer">
-                <router-link to="/"><img class="lrLogo" src="../img/logo.svg"></router-link>
-            </div>
-            <!-- Menu on desktop and lager screens -->
-            <div class="menuItems">
-                <router-link router-link-active to="/">START</router-link>
-                <router-link router-link-active to="/tjanster">TJÄNSTER</router-link>
-                <router-link router-link-active to="/om-oss">OM OSS</router-link>
-                <router-link router-link-active to="/kontakta-oss">KONTAKT</router-link>
-                <router-link router-link-active to="/lediga-jobb">LEDIGA JOBB</router-link>
-                <router-link router-link-active to="/online">LR-ONLINE</router-link>
-                <router-link router-link-active to="/fortnox">FORTNOX</router-link>
-            </div>
-            <div class="smallScreenMenuContainer">
-                <!-- Menu open button -->
-                <div id='open-menu' class='openBtn' v-on:click='open()'>
-                    <!-- Hamburger menu -->
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-            <!-- Menu for screens smaller than tablet -->
-            <!-- Menu overlay that covers the whole screen -->
-            <nav id='nav' class='menuOverlay' v-bind:class="{ active: isActive }">
-                <div id='close-menu' class='closeBtn' v-on:click='close()'>X</div>
-                <ul class='overlay-content' id='overlay-content'>
-                    <li><router-link to="/">START</router-link></li>
-                    <li><router-link to="/tjanster">TJÄNSTER</router-link></li>
-                    <li><router-link to="/om-oss">OM OSS</router-link></li>
-                    <li><router-link to="/kontakta-oss">KONTAKT</router-link></li>
-                    <li><router-link to="/lediga-jobb">LEDIGA JOBB</router-link></li>
-                    <li><router-link to="/online">LR-ONLINE</router-link></li>
-                    <li><router-link to="/fortnox">FORTNOX</router-link></li>
-                </ul>
-            </nav>
+  <div id="lrMenu">
+    <div class="container lrMenuContainer">
+      <div class="lrLogoContainer">
+        <router-link to="/">
+          <img class="lrLogo" src="../img/logo.svg" />
+        </router-link>
+      </div>
+      <!-- Menu on desktop and lager screens -->
+      <div class="menuItems">
+        <router-link router-link-active to="/">START</router-link>
+        <router-link router-link-active to="/tjanster">TJÄNSTER</router-link>
+        <router-link router-link-active to="/om-oss">OM OSS</router-link>
+        <router-link router-link-active to="/kontakta-oss">KONTAKT</router-link>
+        <router-link router-link-active to="/lediga-jobb">LEDIGA JOBB</router-link>
+        <router-link router-link-active to="/online">LR-ONLINE</router-link>
+        <router-link router-link-active to="/fortnox">FORTNOX</router-link>
+      </div>
+      <div class="smallScreenMenuContainer">
+        <!-- Menu open button -->
+        <div id="open-menu" class="openBtn" v-on:click="open()">
+          <!-- Hamburger menu -->
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
+      </div>
+      <!-- Menu for screens smaller than tablet -->
+      <!-- Menu overlay that covers the whole screen -->
+      <nav id="nav" class="menuOverlay" v-bind:class="{ active: isActive }">
+        <div id="close-menu" class="closeBtn" v-on:click="close()">X</div>
+        <ul class="overlay-content" id="overlay-content">
+          <li>
+            <router-link to="/">START</router-link>
+          </li>
+          <li>
+            <router-link to="/tjanster">TJÄNSTER</router-link>
+          </li>
+          <li>
+            <router-link to="/om-oss">OM OSS</router-link>
+          </li>
+          <li>
+            <router-link to="/kontakta-oss">KONTAKT</router-link>
+          </li>
+          <li>
+            <router-link to="/lediga-jobb">LEDIGA JOBB</router-link>
+          </li>
+          <li>
+            <router-link to="/online">LR-ONLINE</router-link>
+          </li>
+          <li>
+            <router-link to="/fortnox">FORTNOX</router-link>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </div>
 </template>
 
 <script>

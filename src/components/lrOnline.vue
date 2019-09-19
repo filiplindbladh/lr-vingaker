@@ -3,43 +3,33 @@
     <!-- Header  -->
     <lr-menu></lr-menu>
     <!-- Banner  -->
-    <div class="contactImage overlay" v-bind:style="{ 'background-image': 'url(' + this.onlineTexts.headerImg.sizes.large + ')' }">
+    <div
+      class="contactImage overlay"
+      v-bind:style="{ 'background-image': 'url(' + this.onlineTexts.headerImg.sizes.large + ')' }"
+    >
       <div class="quote container">
-        <h3 class="responsiveHeading"> {{ this.onlineTexts.heading }} </h3>
+        <h3 class="responsiveHeading">{{ this.onlineTexts.heading }}</h3>
       </div>
     </div>
     <div class="section container lrOnlineText">
-      <p class="mainText" v-html="this.onlineTexts.text">
-      </p>
+      <p class="mainText" v-html="this.onlineTexts.text"></p>
+    </div>
+    <div class="loginContainer">
+      <p class="title">Logga in på Lr-Online</p>
+      <a
+        class="button is-primary"
+        href="https://finsitapp.wolterskluwer.se/External?pe_data=D434259407045475B4A7046415A4071%7C24971089#!/login"
+        target="_blank"
+      >Klicka här för att logga in</a>
     </div>
     <!-- Content on page LR online -->
     <div class="section flex">
       <div class="card">
         <div class="card-content">
           <div class="cardImage">
-            <img :src="this.onlineTexts.img.sizes.large" alt="lr-online">
+            <img :src="this.onlineTexts.img.sizes.large" alt="lr-online" />
           </div>
-            <strong>{{ this.onlineTexts.imgText }}</strong>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <p class="title">Logga in på Lr-Online</p>
-          <!-- target blank to get the inlogged page to show in a new tab -->
-          <!-- form to log in to LR online -->
-        <form action="https://monitor.foretagsplatsen.se/Login" method="post" target="_blank">
-          <input type="hidden" id="theme" name="theme" value="KundId" />
-          <input type="hidden" id="cultureInfo" name="cultureInfo" value="sv-SE" />
-          <p>
-            <label for="username">Användare:</label>
-            <input class="input" type="text" id="username" name="username">
-          </p>
-          <p>
-            <label for="password">Lösenord:</label>
-            <input class="input" type="password" id="password" name="password">
-          </p>
-          <button class="button is-primary is-outlined" type="submit" value="Logga in">Logga in</button>
-        </form>
+          <strong>{{ this.onlineTexts.imgText }}</strong>
         </div>
       </div>
     </div>
@@ -58,10 +48,10 @@ export default {
     lrFooter
   },
   computed: {
-    pages () {
+    pages() {
       return this.$store.state.pages
     },
-    onlineTexts () {
+    onlineTexts() {
       if (this.pages.length > 0) {
         return {
           headerImg: this.pages[1].acf.header_img,
@@ -128,8 +118,7 @@ export default {
   background-color: $red;
 }
 .contactImage {
-  margin-top: 67px;
-  // background-image: url("../img/lrContact.jpeg");
+  //margin-top: 67px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -140,7 +129,7 @@ export default {
 .flex {
   height: 100%;
   padding-bottom: 20px;
-  display:flex;
+  display: flex;
   align-items: stretch;
   align-items: stretch;
   flex-direction: row;
@@ -148,17 +137,29 @@ export default {
 }
 .card {
   width: 50%;
+  margin-bottom: 80px;
 }
 .card-content {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   .cardImage {
     height: auto;
     text-align: center;
   }
 }
-button, p  {
+
+.loginContainer {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+button,
+p {
   margin-top: 30px;
 }
 .lrOnlineText {

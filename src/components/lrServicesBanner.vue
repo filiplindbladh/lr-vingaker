@@ -1,8 +1,11 @@
 <template>
   <div>
-    <div class="services-header overlay" v-bind:style="{ 'background-image': 'url(' + this.servicesBannerContent.header.sizes.large + ')' }">
+    <div
+      class="services-header overlay"
+      v-bind:style="{ 'background-image': 'url(' + this.servicesBannerContent.header.sizes.large + ')' }"
+    >
       <div class="quote container">
-        <h3> {{ this.servicesBannerContent.title }}</h3>
+        <h3>{{ this.servicesBannerContent.title }}</h3>
       </div>
     </div>
     <div class="section servicesText">
@@ -15,10 +18,10 @@
 export default {
   name: 'lrServicesBanner',
   computed: {
-    pages () {
+    pages() {
       return this.$store.state.pages
     },
-    servicesBannerContent () {
+    servicesBannerContent() {
       if (this.pages.length > 0) {
         return {
           header: this.pages[4].acf.services_header,
@@ -74,12 +77,13 @@ export default {
   align-items: center;
   .leadText {
     font-weight: 800;
+    max-width: 700px;
   }
 }
 @media screen and (max-width: $tablet - 1px) {
   .quote {
     h3 {
-      font-size:5vw;
+      font-size: 5vw;
     }
   }
 }

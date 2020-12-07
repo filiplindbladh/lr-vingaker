@@ -19,6 +19,15 @@
         </div>
       </div>
     </swiper-slide>
+      <swiper-slide>
+      <div class="section headerThree header overlay" v-bind:style="{ 'background-image': 'url(' + this.headerContent.imageThree.sizes.large + ')' }">
+        <div class="lrHeader container">
+          <h2>{{ this.headerContent.headingThree }}</h2>
+          <hr class="lrHeaderLineHeader" />
+          <p class="supportText">{{ this.headerContent.supportText }}</p>
+        </div>
+      </div>
+    </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 </template>
@@ -51,19 +60,30 @@ export default {
         return {
           headingOne: this.pages[5].acf.heading_one,
           headingTwo: this.pages[5].acf.heading_two,
+          headingThree: this.pages[5].acf.heading_three,
+          supportText: this.pages[5].acf.supporttext,
           imageOne: this.pages[5].acf.image_one,
-          imageTwo: this.pages[5].acf.image_two
+          imageTwo: this.pages[5].acf.image_two,
+          imageThree: this.pages[5].acf.image_three
+
         }
       } else {
         return {
           headingOne: '...',
           headingTwo: '...',
+          headingThree: '...',
+          supportText: '...',
           imageOne: {
             sizes: {
               large: '...'
             }
           },
           imageTwo: {
+            sizes: {
+              large: '...'
+            }
+          },
+          imageThree: {
             sizes: {
               large: '...'
             }
@@ -79,6 +99,15 @@ export default {
 <style lang="scss" scoped>
 h1, h2 {
   text-transform: uppercase;
+  width: 75%;
+}
+.supportText {
+  @media #{$ipads} {
+    font-size: 1rem;
+  }
+  text-transform: none;
+  color: white;
+  text-align: center;
   width: 75%;
 }
 </style>

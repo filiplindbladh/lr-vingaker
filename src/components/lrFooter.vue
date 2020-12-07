@@ -19,9 +19,9 @@
             <h4>AKTUELLT</h4>
             <hr class="lrHeaderLine">
             <ul>
-              <li><a href="static/news/Nyhetsbrev_Nr34-2017.pdf" target="_blank">Nyhetsbrev December 2017</a></li>
-              <li><a href="static/news/Nyhetsbrev-Nr2-2017.pdf" target="_blank">Nyhetsbrev Juni 2017</a></li>
-              <li><a href="static/news/Nyhetsbrev-Nr-1-2017.pdf" target="_blank">Nyhetsbrev April 2017</a></li>
+              <li><a href="static/news/Nyhetsbrev_Corona_2020-11-26.pdf" target="_blank">Nyhetsbrev Corona 2020-11-26</a></li>
+              <li><a href="static/news/Nyhetsbrev_Juni_2020_(Nr.2).pdf" target="_blank">Nyhetsbrev Juni 2020 Nr 2</a></li>
+              <li><a href="static/news/Nyhetsbrev_Nr1_april_2020.pdf" target="_blank">Nyhetsbrev April 2020 Nr 1</a></li>
             </ul>
           </div>
         </div>
